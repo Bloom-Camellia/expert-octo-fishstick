@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美食介绍</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- 登录按钮 -->
+    <div class="login-container fixed-login">
+        <button id="loginBtn" class="login-button">登录</button>
+    </div>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">登录</button>
+                <button class="tab-btn" data-tab="register">注册</button>
+            </div>
+            
+            <!-- 登录表单 -->
+            <div id="loginTab" class="tab-content active">
+                <h2>用户登录</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">用户名:</label>
+                        <input type="text" id="loginUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">密码:</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">登录</button>
+                    </div>
+                    <div id="loginMessage" class="login-message"></div>
+                </form>
+            </div>
+            
+            <!-- 注册表单 -->
+            <div id="registerTab" class="tab-content">
+                <h2>用户注册</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">用户名:</label>
+                        <input type="text" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">密码:</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">确认密码:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">注册</button>
+                    </div>
+                    <div id="registerMessage" class="login-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="attraction-detail">
+        <!-- 美食标题 -->
+        <h1 id="food-title">美食介绍</h1>
+        
+        <!-- 美食详情部分 -->
+        <div class="detail-content" id="peking-duck">
+            <img src="img/beijingkaoya.jpg" alt="北京烤鸭" class="detail-image">
+            <p>北京烤鸭是具有世界声誉的北京著名菜，以色泽红艳、肉质细嫩、味道醇厚、肥而不腻的特色闻名于世。</p>
+            <ul>
+                <p>历史缘由：</p>
+                <li>明初年间，老百姓爱吃南京板鸭，皇帝也爱吃，据说明太祖朱元璋就“日食烤鸭一只”。</li>
+                <li>宫廷里的御厨们研制出了叉烧烤鸭和焖炉烤鸭这两种。</li>
+                <li>随着明成祖（即朱棣）篡位迁都北京后，也顺便带走了不少南京里烤鸭的高手。</li>
+                <li>在嘉靖年间，烤鸭就从宫廷传到了民间，老“便宜坊”烤鸭店就在菜市口米市胡同挂牌开业，这也是北京第一家烤鸭店。</li>
+                <li>在1864年，京城名气最大的“全聚德”烤鸭店也挂牌开业，烤鸭技术又发展到了“挂炉”时代。</li>
+                <br>
+                <p>吃法三则：</p>
+                <li>第一种吃法：将那又酥又脆的鸭皮蘸了细细的白糖来吃。</li>
+                <li>第二种吃法：甜面酱加葱条，可配黄瓜条、萝卜条，用筷子挑一点甜面酱，抹在荷叶饼上，放几片烤鸭盖在上面，再放上几根葱条、黄瓜条或萝卜条，将荷叶饼卷起食用。</li>
+                <li>第三种吃法：蒜泥加甜面酱，也可配萝卜条等，用荷叶饼卷食鸭肉。</li>
+                <br>
+                <p>文化特色：</p>
+                <li>北京烤鸭以其严格的选料、精细的烤制技术、独特的风味和多样化的食用方式而闻名中外。</li>
+                <li>它具有外形美观、皮酥肉嫩、肥而不腻等特点，葱花和酱料的搭配使其在中餐中独树一帜。</li>
+                <li>品尝烤鸭时，口感皮肉并重，甚至皮重于肉。鸭皮酥脆利口，瘦肉细腻香嫩，肥肉则油而不腻。</li>
+                <li>享用完烤鸭之后，鸭架子可以带回家炖白菜或熬汤。另外，餐厅还会提供炸鸭架子作为佐酒佳肴。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="peking-duck">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-peking-duck" id="rating-1-peking-duck" value="1">
+                    <input type="radio" name="rating-peking-duck" id="rating-2-peking-duck" value="2">
+                    <input type="radio" name="rating-peking-duck" id="rating-3-peking-duck" value="3">
+                    <input type="radio" name="rating-peking-duck" id="rating-4-peking-duck" value="4">
+                    <input type="radio" name="rating-peking-duck" id="rating-5-peking-duck" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="peking-duck">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-peking-duck">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="zhajiangmian">
+            <img src="img/zhajiangmian.jpg" alt="炸酱面" class="detail-image">
+            <p>老北京炸酱面是北京市传统小吃，属北京菜系，在京津冀地区广为流传。该菜品以面条为主料，搭配炸酱与时令菜码拌制而成。</p>
+            <ul>
+                <p>特点：</p>
+                <li>核心酱料选用肥瘦相间的五花肉丁，配以干黄酱和甜面酱混合炒制，经慢火熬煮形成深褐色酱料。</li>
+                <li>面条多用手擀面或机制切面，煮熟后过水保持筋道口感。</li>
+                <li>炸酱面的菜码包含黄瓜丝、黄豆芽、心里美萝卜丝等十余种时令蔬菜，按季节调整种类。</li>
+                <li>食用时需搭配腊八蒜与腊八醋。</li>
+                <li>其酱香浓郁的风味源自传统"小碗干炸"技法，讲究油酱分离、文火慢熬。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="zhajiangmian">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-zhajiangmian" id="rating-1-zhajiangmian" value="1">
+                    <input type="radio" name="rating-zhajiangmian" id="rating-2-zhajiangmian" value="2">
+                    <input type="radio" name="rating-zhajiangmian" id="rating-3-zhajiangmian" value="3">
+                    <input type="radio" name="rating-zhajiangmian" id="rating-4-zhajiangmian" value="4">
+                    <input type="radio" name="rating-peking-duck" id="rating-5-zhajiangmian" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="zhajiangmian">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-zhajiangmian">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="douzhir-jiaoquan">
+            <img src="img/douzhi.jpg" alt="豆汁儿焦圈" class="detail-image">
+            <p>豆汁儿是老北京独具特色的传统小吃，根据文字记载有300年的历史。豆汁是以绿豆为原料，将淀粉滤出制作粉条等食品后的剩余残渣进行发酵产生的，具有养胃、解毒、清火的功效。</p>
+            <ul>
+                <p>发展：</p>
+                <li>豆汁儿本来是北京普通百姓的最爱。</li>
+                <li>乾隆十八年（1754年），豆汁成了宫廷的御膳，乾隆皇帝命人把豆汁儿引入宫廷，并召集群臣共同品尝这民间饮品。</li>
+                <br>
+                <p>特色：</p>
+                <li>豆汁儿极富蛋白质、维生素C、粗纤维和糖，并有祛暑、清热、温阳、健脾、开胃、去毒、除燥等功效。</li>
+                <li>豆汁是用绿豆做原料，经过烫豆，磨豆，淀粉分离，发酵等一系列工序制作而成。</li>
+                <li>如果趁热喝，味道甜中带酸，酸中有涩，滋味独特；再就着咸菜丝、焦圈、烧饼之类就更有味道了。</li>
+                <li>老北京人爱喝豆汁，或者直接买来生豆汁回家自己熬，一般冬天都这么喝；或者是到庙会和街头的豆汁摊儿上去喝，一般夏天这么喝。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="douzhir-jiaoquan">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-douzhir-jiaoquan" id="rating-1-douzhir-jiaoquan" value="1">
+                    <input type="radio" name="rating-douzhir-jiaoquan" id="rating-2-douzhir-jiaoquan" value="2">
+                    <input type="radio" name="rating-douzhir-jiaoquan" id="rating-3-douzhir-jiaoquan" value="3">
+                    <input type="radio" name="rating-douzhir-jiaoquan" id="rating-4-douzhir-jiaoquan" value="4">
+                    <input type="radio" name="rating-douzhir-jiaoquan" id="rating-5-douzhir-jiaoquan" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="douzhir-jiaoquan">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-douzhir-jiaoquan">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="chaogan">
+            <img src="img/chaogan.jpg" alt="炒肝" class="detail-image">
+            <p>炒肝是北京市传统小吃，属京菜，起源于宋代“熬肝”“炒肺”，清朝同治年间由前门会仙居改良“白水杂碎”创制，以猪大肠为主料、猪肝为辅料，经煮制勾芡而成，具有汤汁油亮、蒜香浓郁的特点。</p>
+            <ul>
+                <p>菜品由来：</p>
+                <li>清代炒肝的制售者有铺面和肩挑两种。</li>
+                <li>清朝同治年间，前门鲜鱼口胡同的会仙居发明不勾芡方法制做炒肝，被认为是炒肝的创制者。</li>
+                <li>名炒肝儿，其实以猪肥肠为主，猪肝只占1/3。</li>
+                <li>制作方法是先将猪肠用碱、盐浸泡揉搓，用清水加醋洗净后再煮，烂熟后切成5分长的小段，俗称“顶针段”。</li>
+                <li>鲜猪肝洗净，用刀斜片成柳叶形的条。</li>
+                <br>
+                <p>营养价值：</p>
+                <li>猪肝含有丰富的铁、磷，是造血不可缺少的原料。</li>
+                <li>猪肝中富含蛋白质、卵磷脂和微量元素，有利于儿童的智力发育和身体发育。</li>
+                <li>猪肝中含有丰富的维生素A，常吃猪肝，可逐渐消除眼科病症。</li>
+                <li>据近代医学研究发现，猪肝具有多种抗癌物质，如维生素C、硒等，而且肝脏还具有较强的抑癌能力和抗疲劳的特殊物质。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="chaogan">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-chaogan" id="rating-1-chaogan" value="1">
+                    <input type="radio" name="rating-chaogan" id="rating-2-chaogan" value="2">
+                    <input type="radio" name="rating-chaogan" id="rating-3-chaogan" value="3">
+                    <input type="radio" name="rating-peking-duck" id="rating-4-chaogan" value="4">
+                    <input type="radio" name="rating-chaogan" id="rating-5-chaogan" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="chaogan">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-chaogan">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="baodu">
+            <img src="img/baodu.jpg" alt="爆肚" class="detail-image">
+            <p>北京爆肚是以牛肚或羊肚为原料的传统京味小吃，通过沸水快速爆熟并佐以特制麻酱调料，呈现鲜嫩香脆的独特口感。老北京素有"要吃秋，有爆肚"的食俗，将立秋食用爆肚与秋季进补传统相结合。</p>
+            <ul>
+                <p>主要原料：</p>
+                <li>鲜牛肚</li>
+                <br>
+                <p>口味特点：</p>
+                <li>鲜嫩香脆</li>
+                <br>
+                <p>起源时间：</p>
+                <li>清乾隆年间</li>
+                <br>
+                <p>流行地区：</p>
+                <li>北京城区</li>
+                <br>
+                <p>食用习俗：</p>
+                <li>立秋应季食用</li>
+                <br>
+                <p>文化习俗：</p>
+                <li>清代《都门竹枝词》记载"爆肚油肝香灌肠，玉泉当酒冰入唇"，印证其作为市井饮食的代表地位。</li>
+                <li>立秋当日老北京讲究"抢秋膘"，通过食用爆肚补充夏季消耗。</li>
+                <li>品尝时遵循"先鲜后脆最后嫩"的顺序，传统食客多配二两白酒佐餐。</li>
+                <br>
+                <p>营养价值：</p>
+                <li>每百克牛肚蛋白质含量达14.5克，脂肪仅1.6克。</li>
+                <li>中医认为其具健脾胃功效，适合夏秋季节调理肠胃。</li>
+                <li>老字号店铺每日早晨精选检疫合格鲜肚，经物理揉搓清洗后入菜，确保食材安全。</li>
+                <br>
+                <p>蘸料配置：</p>
+                <li>传统蘸料以二八酱（芝麻酱与花生酱2:8配比）为基础，加入酱豆腐汁、韭菜花、生抽进行调配。</li>
+                <li>现制辣椒油需用温水浸泡后的干辣椒低温煸香。</li>
+                <li>调料配制强调"澥酱"工艺：顺时针搅动芝麻酱至黏稠度适中，滴落时纹路缓慢消散为佳。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="peking-baodu">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-baodu" id="rating-1-baodu" value="1">
+                    <input type="radio" name="rating-baodu" id="rating-2-baodu" value="2">
+                    <input type="radio" name="rating-baodu" id="rating-3-baodu" value="3">
+                    <input type="radio" name="rating-baodu" id="rating-4-baodu" value="4">
+                    <input type="radio" name="rating-baodu" id="rating-5-baodu" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="baodu">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-baodu">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="jingjiangrousi">
+            <img src="img/jingjiangrousi.jpg" alt="京酱肉丝" class="detail-image">
+            <p>京酱肉丝（Sauteed Shredded Pork in Sweet Bean Sauce）是北方传统家常菜，属于东北菜、北京菜系，流行于北京及东北地区。该菜以猪里脊肉为主料，配以甜面酱、葱段、豆腐皮等辅料，采用"酱爆"技法烹制而成，具有咸甜适中、酱香浓郁、色泽红亮的特点。</p>
+            <ul>
+                <p>菜品历史：</p>
+                <li>相传二十世纪三十年代，北京紫禁城东北方约4里地的一个大杂院里，住着一个从东北来的陈老汉，和孙子相依为命，靠做豆腐维生。</li>
+                <li>有一次，陈老汉把猪肉挑出瘦的，切成很薄的片，下锅炒并放豆酱炒好，没有面饼还有点豆腐皮，切成方块，照猫画虎就做好了"烤鸭"，孙子用豆腐皮卷着大葱和"烤鸭"吃的那香就别提有多么高兴了，爷俩度过了一个幸福的春节。</li>
+                <li>孙子长大后，到全聚德学徒，成了一名水平不错的厨子，烤鸭也是常吃了，却总体会不到第一次吃烤鸭的感受。后来，经过陈老汉的指点，他孙子对菜品不断改进，才有了现今酱香浓郁，肉丝细嫩的京酱肉丝。</li>
+                <br>
+                <p>菜品特色：</p>
+                <li>京酱肉丝精选里脊肉为主料，用酱爆烹制而成。</li>
+                <li>食用时辅以葱丝、腐皮，口味咸甜适中，酱香浓郁，风味独特。</li>
+                <br>
+                <p>制作工艺：</p>
+                <li>菜品选用里脊肉切丝后经盐、料酒、蛋清等腌制滑油，再与甜面酱翻炒收汁。</li>
+                <li>常搭配葱丝、黄瓜丝用豆腐皮或春饼卷食，亦可搭配米饭或馒头食用。</li>
+                <br>
+                <p>营养价值：</p>
+                <li>该菜蛋白质及钙、铁含量较高，肉丝软嫩易消化，适合老年人食用。</li>
+                <li>猪肉含有丰富的蛋白质及脂肪等成分，具有补虚强身，滋阴润燥、丰肌泽肤的作用。</li>
+                <li>大葱含有挥发油，油中主要成分为蒜素，又含有二烯内基硫醚、草酸钙。此外，还含有脂肠、胡萝卜素、维生素B和C、烟酸、钙、镁、铁等成分。</li>
+                <br>
+                <p>基本信息：</p>
+                <li>中文名：京酱肉丝</li>
+                <li>外文名：Sauteed Shredded Pork in Sweet Bean Sauce</li>
+                <li>分类：北方菜</li>
+                <li>口味：咸甜、酱香</li>
+                <li>主要食材：猪里脊，甜面酱、葱段、豆腐皮、黄瓜、胡萝卜</li>
+                <li>工艺：煎炒</li>
+                <li>制作时长：30分钟</li>
+                <li>主要调料：料酒、蚝油、盐、生抽、蛋清、淀粉、酱油、白糖</li>
+                <li>流行地区：北京、东北地区</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="jingjiangrousi">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-jingjiangrousi" id="rating-1-jingjiangrousi" value="1">
+                    <input type="radio" name="rating-jingjiangrousi" id="rating-2-jingjiangrousi" value="2">
+                    <input type="radio" name="rating-jingjiangrousi" id="rating-3-jingjiangrousi" value="3">
+                    <input type="radio" name="rating-jingjiangrousi" id="rating-4-jingjiangrousi" value="4">
+                    <input type="radio" name="rating-jingjiangrousi" id="rating-5-jingjiangrousi" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="jingjiangrousi">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-jingjiangrousi">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="lvdagun">
+            <img src="img/lvdagun.jpg" alt="驴打滚" class="detail-image">
+            <p>驴打滚，又称豆面糕，是中国东北地区、老北京和天津卫传统小吃之一，成品黄、白、红三色分明，煞是好看。因其最后制作工序中撒上的黄豆粉，犹如老北京郊外野驴撒欢打滚时扬起的阵阵黄土，因此而得名"驴打滚"。1997年，这一美食获得了"中华名小吃"的称号。</p>
+            <ul>
+                <p>基本信息：</p>
+                <li>中文名：驴打滚</li>
+                <li>外文名：Fried chop rice cake Rolling donkey</li>
+                <li>口味：软糯可口 香甜美味</li>
+                <li>主要食材：大黄米面，黄豆面，澄沙，白糖，香油，桂花等等</li>
+                <li>流行地区：天津、北京、东北等地区</li>
+                <li>别名：豆面糕、豆面卷子</li>
+                <br>
+                <p>历史习俗：</p>
+                <li>豆面卷子起源于东北地区，在北京称驴打滚，是东北地区以及北京小吃中的古老品种之一。</li>
+                <li>清人写的《燕都小食品杂咏》中记载："红糖水馅巧安排，黄米成团豆里埋，何事群呼驴打滚，称名未免近诙谐。"</li>
+                <li>北京人食"驴打滚"（豆面糕）的历史悠久，据张江裁写的《燕京民间食货史料杆》中记载称："驴打滚，乃用黄米粘面蒸熟，裹以红糖水为馅，滚于炒豆面中，使成球形。"</li>
+                <li>自古以来承德地区就盛产一种黍米，据《热河志·物产》记载："黍，土人称为黄米"。这种黍米，性粘，承德叫黄米，可闷干饭，或碾成粉用来做粘豆包、年糕和"驴打滚"。</li>
+                <li>喜吃粘食本来是满族人的传统，因为满族的狩猎生活，经常是早出晚归，吃粘食耐饿。</li>
+                <li>现各家小吃店一年四季都有供应，但大多数已不用黄米面，改用江米面了，因外滚黄豆粉面，其颜色仍为黄色，是群众非常喜爱的一种小吃。</li>
+                <br>
+                <p>制作流程：</p>
+                <li>原料有大黄米面、黄豆面、澄沙、白糖、香油、桂花、青红丝和瓜仁。</li>
+                <li>制作流程分为制坯、和馅、成型三道工序。</li>
+                <li>做好的"驴打滚"外层粘满豆面，呈金黄色，豆香馅甜，入口绵软，别具风味。</li>
+                <br>
+                <p>传说：</p>
+                <li>据说慈禧吃烦了宫里的食物，想尝点儿新鲜玩意儿。于是御膳大厨左思右想，决定用江米粉裹着红豆沙做一道新菜。</li>
+                <li>新菜刚一做好，便会有一个叫小驴儿的太监来到了御膳厨房，谁知这小驴儿一个不小心，就把刚刚做好的新菜碰到了装着黄豆面的盆里。</li>
+                <li>大厨没办法，只好硬着头皮将这道菜呈到慈禧太后的面前。慈禧太后一吃这新玩意儿觉得味道还不错，就问大厨："这个东西叫什么呀？"</li>
+                <li>大厨想了想，都是那个叫小驴儿的太监闯的祸，于是就跟慈禧说："这叫‘驴打滚’。"从此，就有了"驴打滚"这道小吃。</li>
+                <br>
+                <p>营养价值：</p>
+                <li>豆馅入口即化，香甜入心，黄豆面入嘴后可以不嚼，细细品，是老少皆宜的传统风味小吃。</li>
+                <li>经常食用驴打滚有助于健脾益胃、促进排尿、缓解肿胀，还有通气除烦的功效。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="lvdagun">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-lvdagun" id="rating-1-lvdagun" value="1">
+                    <input type="radio" name="rating-lvdagun" id="rating-2-lvdagun" value="2">
+                    <input type="radio" name="rating-lvdagun" id="rating-3-lvdagun" value="3">
+                    <input type="radio" name="rating-lvdagun" id="rating-4-lvdagun" value="4">
+                    <input type="radio" name="rating-lvdagun" id="rating-5-lvdagun" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="lvdagun">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-lvdagun">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="shuan-yangrou">
+            <img src="img/涮羊肉.jpg" alt="涮羊肉" class="detail-image">
+            <p>涮羊肉，又称羊肉火锅，是北方冬令经典美食。以铜锅炭火为佳，清汤为底，突出羊肉本味。精选绵羊后腿、上脑等部位，切为薄如纸的肉片，入沸汤中一涮即熟，蘸秘制麻酱小料，佐以糖蒜、烧饼，肉嫩不膻，暖身滋补，尽显豪迈食风。</p>
+            <ul>
+                <p>网友评价：</p>
+                <li>"手切鲜羊肉立盘不掉，口感弹嫩，麻酱香味太正了！传统炭火铜锅氛围感十足。"</li>
+                <li>"羊肉品质超群，清水锅底才能考验真本事，搭配现炸辣椒油，香而不辣，绝配！"</li>
+                <br>
+                <p>餐馆推荐：</p>
+                <li>东来顺饭庄（王府井店）：东城区王府井大街，百年老字号，以传统炭火铜锅和刀工精湛的手切羊肉著称。</li>
+                <li>满福楼：西城区地安门内大街，注重精选锡盟羊肉，以"手切鲜羊肉"和浓郁秘制麻酱小料备受赞誉。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="shuan-yangrou">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-shuan-yangrou" id="rating-1-shuan-yangrou" value="1">
+                    <input type="radio" name="rating-shuan-yangrou" id="rating-2-shuan-yangrou" value="2">
+                    <input type="radio" name="rating-shuan-yangrou" id="rating-3-shuan-yangrou" value="3">
+                    <input type="radio" name="rating-shuan-yangrou" id="rating-4-shuan-yangrou" value="4">
+                    <input type="radio" name="rating-peking-duck" id="rating-5-shuan-yangrou" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="shuan-yangrou">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-shuan-yangrou">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="luzhu-huoshao">
+            <img src="img/卤煮火烧.jpg" alt="卤煮火烧" class="detail-image">
+            <p>卤煮火烧是起源于北京南城的传统小吃，以其浓郁热烈的风味深受喜爱。它以猪肠、猪肺、炸豆腐等为主料，用多年老汤长时间卤制，火烧戗面入味。成品汤汁醇厚，内脏处理得毫无异味，软烂中带着嚼劲，火烧吸饱汤汁，是充满市井烟火气的饱腹美味。</p>
+            <ul>
+                <p>网友评价：</p>
+                <li>"老汤味道太正了！肠子给得足，处理得干净，火烧泡得透又不失筋道，一碗下去特别满足。"</li>
+                <li>"地道的老北京味儿，环境就是接地气，桌上蒜泥辣椒自己随便加，吃得就是这口酣畅淋漓。"</li>
+                <br>
+                <p>餐馆推荐：</p>
+                <li>小肠陈饭庄（南横街店）：西城区南横东街，卤煮世家，被誉为卤煮界的"金字招牌"，味道最为传统正宗。</li>
+                <li>门框胡同百年卤煮（新街口店）：西城区赵登禹路，分店众多，汤浓料足，是许多游客和 locals 常去的选择。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="luzhu-huoshao">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-luzhu-huoshao" id="rating-1-luzhu-huoshao" value="1">
+                    <input type="radio" name="rating-luzhu-huoshao" id="rating-2-luzhu-huoshao" value="2">
+                    <input type="radio" name="rating-luzhu-huoshao" id="rating-3-luzhu-huoshao" value="3">
+                    <input type="radio" name="rating-luzhu-huoshao" id="rating-4-luzhu-huoshao" value="4">
+                    <input type="radio" name="rating-luzhu-huoshao" id="rating-5-luzhu-huoshao" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="luzhu-huoshao">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-luzhu-huoshao">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+
+        <div class="detail-content" id="mending-roubing">
+            <img src="img/门钉肉饼.jpg" alt="门钉肉饼" class="detail-image">
+            <p>门钉肉饼是北京传统清真小吃，因其形似古代城门上的铜钉而得名。它以牛肉大葱为馅，面皮半发面，煎烙而成。成品色泽金黄，外皮酥脆，内里肉汁饱满滚烫，口感厚实，肉香浓郁。其精髓在于趁热食用，品尝时需先咬小口吸吮汤汁，以免烫口，是极具满足感的市井美味。</p>
+            <ul>
+                <p>网友评价：</p>
+                <li>"皮薄馅大，一口爆汁！牛肉馅又鲜又嫩，蘸上醋和辣椒油，香而不腻，每次都得排队。"</li>
+                <li>"真正的老手艺，饼的厚度和煎的火候恰到好处，汤汁饱满，肉香扑鼻，就是记忆里的味道。"</li>
+                <br>
+                <p>餐馆推荐：</p>
+                <li>宝瑞门钉肉饼店：东城区朝阳门北小街，多年老店，以肉饼汁多肉鲜、价格亲民著称。</li>
+                <li>祥云轩：西城区牛街输入胡同，清真老字号，其门钉肉饼以传统工艺和地道风味备受推崇。</li>
+            </ul>
+            <!-- 评分区域 -->
+            <div class="rating-section" data-item="mending-roubing">
+                <h3>评价和评分</h3>
+                <div class="rating-stars">
+                    <span class="rating-star" data-rating="1">★</span>
+                    <span class="rating-star" data-rating="2">★</span>
+                    <span class="rating-star" data-rating="3">★</span>
+                    <span class="rating-star" data-rating="4">★</span>
+                    <span class="rating-star" data-rating="5">★</span>
+                </div>
+                <div class="rating-inputs">
+                    <input type="radio" name="rating-mending-roubing" id="rating-1-mending-roubing" value="1">
+                    <input type="radio" name="rating-mending-roubing" id="rating-2-mending-roubing" value="2">
+                    <input type="radio" name="rating-mending-roubing" id="rating-3-mending-roubing" value="3">
+                    <input type="radio" name="rating-mending-roubing" id="rating-4-mending-roubing" value="4">
+                    <input type="radio" name="rating-mending-roubing" id="rating-5-mending-roubing" value="5">
+                </div>
+                <textarea class="rating-textarea" placeholder="写下您的评价..."></textarea>
+                <button class="submit-rating" data-item="mending-roubing">提交评价</button>
+                
+                <!-- 评价展示区域 -->
+                <div class="ratings-display" id="ratings-mending-roubing">
+                    <!-- 评价将通过JavaScript动态添加 -->
+                </div>
+            </div>
+            <!-- 返回主页面链接 -->
+            <a href="index.html#food" class="back-button">返回主页面</a>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取URL查询参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const foodId = urlParams.get('food');
+            
+            // 首先隐藏所有内容
+            const allContents = document.querySelectorAll('.detail-content');
+            allContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // 如果有美食ID参数，只显示对应ID的美食内容
+            if (foodId) {
+                const targetContent = document.getElementById(foodId);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                    // 设置页面标题
+                    document.title = `${targetContent.querySelector('img')?.alt || '美食介绍'} - 美食介绍`;
+                    document.getElementById('food-title').textContent = targetContent.querySelector('img')?.alt || '美食介绍';
+                }
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

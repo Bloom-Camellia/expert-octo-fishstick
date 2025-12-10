@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京游玩指南</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <video class="main-video" autoplay loop muted playsinline preload="auto">
+            <source src="background.mp4" type="video/mp4">
+        </video>
+        <img src="img/beijing.jpg" alt="北京地图" class="main-image-fallback">
+        <h1 class="main-title">北京游玩指南</h1>
+    </header>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索景点或美食...">
+            <button id="searchButton">搜索</button>
+            <div id="searchSuggestions" class="search-suggestions"></div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item active">
+                    <a href="#attractions" class="nav-link">景点</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#food" class="nav-link">美食</a>
+                </li>
+            </ul>
+            <div class="login-container">
+                <button id="loginBtn" class="login-button">登录</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-tabs">
+                <button class="tab-btn active" data-tab="login">登录</button>
+                <button class="tab-btn" data-tab="register">注册</button>
+            </div>
+            
+            <!-- 登录表单 -->
+            <div id="loginTab" class="tab-content active">
+                <h2>用户登录</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">用户名:</label>
+                        <input type="text" id="loginUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">密码:</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">登录</button>
+                    </div>
+                    <div id="loginMessage" class="login-message"></div>
+                </form>
+            </div>
+            
+            <!-- 注册表单 -->
+            <div id="registerTab" class="tab-content">
+                <h2>用户注册</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerUsername">用户名:</label>
+                        <input type="text" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">密码:</label>
+                        <input type="password" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">确认密码:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">注册</button>
+                    </div>
+                    <div id="registerMessage" class="login-message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main class="attractions-container" id="attractions">
+        <!-- 1. 故宫 -->
+        <div class="attraction-box" data-attraction="forbidden-city">
+            <img src="img/forbidden-city.jpg" alt="故宫" class="attraction-image">
+            <div class="attraction-name">故宫</div>
+        </div>
+        
+        <!-- 2. 八达岭长城 -->
+        <div class="attraction-box" data-attraction="great-wall">
+            <img src="img/great-wall.jpg" alt="八达岭长城" class="attraction-image">
+            <div class="attraction-name">八达岭长城（延庆区）</div>
+        </div>
+        
+        <!-- 3. 颐和园 -->
+        <div class="attraction-box" data-attraction="summer-palace">
+            <img src="img/summer-palace.jpg" alt="颐和园" class="attraction-image">
+            <div class="attraction-name">颐和园（海淀区）</div>
+        </div>
+        
+        <!-- 4. 鸟巢 -->
+        <div class="attraction-box" data-attraction="bird-nest">
+            <img src="img/bird-nest.jpg" alt="鸟巢" class="attraction-image">
+            <div class="attraction-name">鸟巢</div>
+        </div>
+        
+        <!-- 5. 圆明园遗址 -->
+        <div class="attraction-box" data-attraction="yuanmingyuan">
+            <img src="img/yuanmingyuan.jpg" alt="圆明园遗址" class="attraction-image">
+            <div class="attraction-name">圆明园遗址（海淀区）</div>
+        </div>
+        
+        <!-- 6. 恭王府博物馆 -->
+        <div class="attraction-box" data-attraction="prince-gong-mansion">
+            <img src="img/prince-gong.jpg" alt="恭王府博物馆" class="attraction-image">
+            <div class="attraction-name">恭王府博物馆（西城区）</div>
+        </div>
+        
+        <!-- 7. 北京环球影城 -->
+        <div class="attraction-box" data-attraction="universal-studios-beijing">
+            <img src="img/universal-beijing.jpg" alt="北京环球影城" class="attraction-image">
+            <div class="attraction-name">北京环球影城（通州区）</div>
+        </div>
+        
+        <!-- 8. 中国国家博物馆 -->
+        <div class="attraction-box" data-attraction="national-museum">
+            <img src="img/national-museum.jpg" alt="中国国家博物馆" class="attraction-image">
+            <div class="attraction-name">中国国家博物馆（东城区）</div>
+        </div>
+        
+        <!-- 9. 北海公园 -->
+        <div class="attraction-box" data-attraction="beihai-park">
+            <img src="img/beihai-park.jpg" alt="北海公园" class="attraction-image">
+            <div class="attraction-name">北海公园（西城区）</div>
+        </div>
+    </main>
+
+    <!-- 美食部分 -->
+    <section class="food-container" id="food" style="display: none;">
+       
+        <div class="food-grid">
+            <!-- 北京烤鸭 -->
+            <div class="food-box" data-food="peking-duck">
+                <img src="img/beijingkaoya.jpg" alt="北京烤鸭" class="food-image">
+                <div class="food-name">北京烤鸭</div>
+            </div>
+            <!-- 炸酱面 -->
+            <div class="food-box" data-food="zhajiangmian">
+                <img src="img/zhajiangmian.jpg" alt="炸酱面" class="food-image">
+                <div class="food-name">炸酱面</div>
+            </div>
+            <!-- 豆汁儿焦圈 -->
+            <div class="food-box" data-food="douzhir-jiaoquan">
+                <img src="img/douzhi.jpg" alt="豆汁儿焦圈" class="food-image">
+                <div class="food-name">豆汁儿焦圈</div>
+            </div>
+            <!-- 炒肝 -->
+            <div class="food-box" data-food="chaogan">
+                <img src="img/chaogan.jpg" alt="炒肝" class="food-image">
+                <div class="food-name">炒肝</div>
+            </div>
+            <!-- 爆肚 -->
+            <div class="food-box" data-food="baodu">
+                <img src="img/baodu.jpg" alt="爆肚" class="food-image">
+                <div class="food-name">爆肚</div>
+            </div>
+            <!-- 京酱肉丝 -->
+            <div class="food-box" data-food="jingjiangrousi">
+                <img src="img/jingjiangrousi.jpg" alt="京酱肉丝" class="food-image">
+                <div class="food-name">京酱肉丝</div>
+            </div>
+            <!-- 驴打滚 -->
+            <div class="food-box" data-food="lvdagun">
+                <img src="img/lvdagun.jpg" alt="驴打滚" class="food-image">
+                <div class="food-name">驴打滚</div>
+            </div>
+            <!-- 涮羊肉 -->
+            <div class="food-box" data-food="shuan-yangrou">
+                <img src="img/涮羊肉.jpg" alt="涮羊肉" class="food-image">
+                <div class="food-name">涮羊肉</div>
+            </div>
+            <!-- 卤煮火烧 -->
+            <div class="food-box" data-food="luzhu-huoshao">
+                <img src="img/卤煮火烧.jpg" alt="卤煮火烧" class="food-image">
+                <div class="food-name">卤煮火烧</div>
+            </div>
+            <!-- 门钉肉饼 -->
+            <div class="food-box" data-food="mending-roubing">
+                <img src="img/门钉肉饼.jpg" alt="门钉肉饼" class="food-image">
+                <div class="food-name">门钉肉饼</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
